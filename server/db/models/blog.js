@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   Blog.associate = function(models) {
     const Author = sequelize.define('author', {/* ... */})
     const Blog = sequelize.define('blog', {/* ... */})
-    
+    Blog.belongsTo(Author)
   };
   return Blog;
 };
