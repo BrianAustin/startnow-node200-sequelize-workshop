@@ -9,6 +9,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use('/api/authors', require('./routes/Authors'));
+app.use('/api/blogs', require('./routes/Blogs'));
+
 app.get('/', function(req, res) {
   res.status(200).send();
 });
