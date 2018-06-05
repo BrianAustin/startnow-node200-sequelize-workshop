@@ -6,9 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING
   }, {});
   Author.associate = function(models) {
-    const Author = sequelize.define('author', {/* ... */})
-    const Blog = sequelize.define('blog', {/* ... */})
-    Author.hasMany(Blog)
+
+    models.Author.hasMany(models.Blog, {as: 'blogs', foreignKey: 'authorId'});
   };
   return Author;
 };
